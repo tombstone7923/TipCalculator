@@ -80,5 +80,14 @@ public class TipCalculatorController {
             }
         });
 
+        //property listener that detects when tip percentage slider is changed
+        tipPercentageSlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                calculateButtonPressed(null);
+            }
+        });
+
     }
 }
