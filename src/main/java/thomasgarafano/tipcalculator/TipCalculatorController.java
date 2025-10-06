@@ -72,5 +72,13 @@ public class TipCalculatorController {
                 }
         );
 
+        //property listener that detects when text in amount field is changed
+        amountTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                calculateButtonPressed(null);
+            }
+        });
+
     }
 }
